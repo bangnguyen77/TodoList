@@ -25,3 +25,29 @@
 $("li").click(function() {
 	$(this).toggleClass("completed");
 });
+
+// click on X to delete a Todo
+// $("span").click(function(event) {
+// 	alert('clicked on a span');
+// 	event.stopPropagation(); // prevent event bubbling
+// });
+
+// $("span").click(function(event) {
+// 	$(this).parent().remove();
+// 	event.stopPropagation();
+// });
+
+// $("span").click(function(event) {
+// 	$(this).parent().fadeOut(); // the lis were not removed, just display: "none"
+// 	event.stopPropagation();
+// });
+
+$("span").click(function(event) {
+	$(this).parent().fadeOut(500, function() { // this here is the span clicked 
+		$(this).remove(); // this here is the parent element that was clicked (li)
+	});
+	event.stopPropagation();
+});
+
+
+
