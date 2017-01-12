@@ -50,4 +50,40 @@ $("span").click(function(event) {
 });
 
 
+// Add a new Todo
+// $("input[type='text']").keypress(function() {
+// 	console.log("keypressed"); // any key
+// });
+
+// $("input[type='text']").keypress(function(event) {
+// 	if(event.which === 13) {
+// 		console.log('You hit the Enter key'); // only Enter key was hit
+// 	}
+// });
+
+$("input[type='text']").keypress(function(event) {
+	if(event.which === 13) {
+		// grabbing new todo text from input
+		var todoText = $(this).val();
+		// clear out the input after users enter an input
+		$(this).val("");
+		// create a new li and add to ul
+		$("ul").append("<li><span>X</span> " + todoText + "</li>");
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
