@@ -22,7 +22,7 @@
 // 	}
 // });
 
-$("li").click(function() {
+$("ul").on("click", "li", function() { // only the li was clicked inside the ul
 	$(this).toggleClass("completed");
 });
 
@@ -42,7 +42,7 @@ $("li").click(function() {
 // 	event.stopPropagation();
 // });
 
-$("span").click(function(event) {
+$("ul").on("click", "span", function(event) {
 	$(this).parent().fadeOut(500, function() { // this here is the span clicked 
 		$(this).remove(); // this here is the parent element that was clicked (li)
 	});
