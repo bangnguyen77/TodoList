@@ -42,7 +42,7 @@ $("ul").on("click", "li", function() { // only the li was clicked inside the ul
 // 	event.stopPropagation();
 // });
 
-$("ul").on("click", "span", function(event) {
+$("ul").on("click", "span", function(event) { // only the span was clicked inside the ul
 	$(this).parent().fadeOut(500, function() { // this here is the span clicked 
 		$(this).remove(); // this here is the parent element that was clicked (li)
 	});
@@ -68,9 +68,10 @@ $("input[type='text']").keypress(function(event) {
 		// clear out the input after users enter an input
 		$(this).val("");
 		// create a new li and add to ul
-		$("ul").append("<li><span>X</span> " + todoText + "</li>");
+		$("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>");
 	}
 });
+
 
 
 
